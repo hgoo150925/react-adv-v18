@@ -8,11 +8,15 @@ export const UseStateCounter = () => {
     setCounter(counter - 1);
   };
 
-  function complexIncrease() {
+  const complexIncrease = () => {
     setTimeout(() => {
-      setCounter(counter + 1);
-    }, 3000);
-  }
+      // setCounter(value + 1);
+      setCounter(prevState => {
+        return prevState + 1;
+      });
+    }, 2000);
+  };
+
   return (
     <>
       <section style={{ margin: '4rem 0' }}>
