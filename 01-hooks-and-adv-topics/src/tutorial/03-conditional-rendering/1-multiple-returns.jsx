@@ -18,8 +18,8 @@ export const MultipleReturns = () => {
           throw new Error(resp.statusText);
         }
       })
-      .then(user => {
-        setUser(user);
+      .then(data => {
+        setUser(data);
         setIsLoading(false);
       })
       .catch(error => console.log(error));
