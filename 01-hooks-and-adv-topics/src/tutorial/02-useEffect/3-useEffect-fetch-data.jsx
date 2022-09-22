@@ -9,6 +9,7 @@ export const UseEffectFetchData = () => {
     try {
       const response = await fetch(url);
       const users = await response.json();
+      // setUsers(users) -> actualiza el valor de users
       setUsers(users);
     } catch (error) {
       throw new Error(`Error! status: ${response.status}`);
