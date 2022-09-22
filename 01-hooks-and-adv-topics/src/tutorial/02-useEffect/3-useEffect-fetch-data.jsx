@@ -17,7 +17,7 @@ export const UseEffectFetchData = () => {
 
   useEffect(() => {
     getUsers();
-  }, [users]);
+  }, []);
 
   return (
     <>
