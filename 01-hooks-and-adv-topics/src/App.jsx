@@ -1,14 +1,9 @@
-// import { ErrorExample } from './tutorial/1-useState/setup/1-error-example';
-// import { UseStateBasics } from './tutorial/1-useState/setup/2-useState-basics';
-// import { UseStateArray } from './tutorial/1-useState/setup/3-useState-array';
-// import { UseStateObject } from './tutorial/1-useState/setup/4-useState-object';
-
-import { UseStateCounter } from './tutorial/1-useState/setup/5-useState-counter';
+import { ShowHide } from './tutorial/03-conditional-rendering/3-show-hide';
 
 function App() {
   return (
     <div className="container">
-      <UseStateCounter />
+      <ShowHide />
     </div>
   );
 }
