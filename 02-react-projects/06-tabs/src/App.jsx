@@ -10,19 +10,18 @@ function App() {
 
   const fetchJobs = async () => {
     const response = await fetch(url);
-    const data = response.json();
-    setJobs(data);
+    const newJobs = await response.json();
+    setJobs(newJobs);
     setIsLoading(false);
   };
-
   useEffect(() => {
     fetchJobs();
   }, []);
 
   if (isLoading) {
     return (
-      <section>
-        <h1>loading...</h1>
+      <section className="section loading">
+        <h1>Loading...</h1>
       </section>
     );
   }
