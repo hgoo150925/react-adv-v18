@@ -9,9 +9,11 @@ export const ControlledInputs = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
 
+  let data = { firstName, email };
+
   function handleSubmit(e) {
     e.preventDefault();
-    alert(firstName);
+    alert(JSON.stringify(data, 0, null));
   }
 
   return (
@@ -32,7 +34,7 @@ export const ControlledInputs = () => {
           <div className="form-control">
             <label htmlFor="email">Email: </label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               value={email}
