@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 // JS
 // const input = document.getElementById('myText');
 // const inputValue = input.value
@@ -6,14 +6,22 @@ import { useState } from "react";
 // value, onChange
 
 export const ControlledInputs = () => {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-
-  let data = { firstName, email };
+  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
+  const [people, setPeople] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert(JSON.stringify(data, 0, null));
+    if (firstName && email) {
+      const person = { id: new Date().getTime().toString(), firstName, email };
+      setPeople(people => {
+        return [...people, person];
+      });
+      setFirstName('');
+      setEmail('');
+    } else {
+      alert('empty value');
+    }
   }
 
   return (
@@ -46,6 +54,14 @@ export const ControlledInputs = () => {
             add person
           </button>
         </form>
+        {people.map(({ id, firstName, email }) => {
+          return (
+            <div key={id} className="item">
+              <h4>{firstName}</h4>
+              <p>{email}</p>
+            </div>
+          );
+        })}
       </article>
     </>
   );

@@ -1,9 +1,9 @@
-import { ShowHide } from './tutorial/03-conditional-rendering/3-show-hide';
+import { ControlledInputs } from './tutorial/04-forms/1-controlled-inputs';
 
 function App() {
   return (
     <div className="container">
-      <ShowHide />
+      <ControlledInputs />
     </div>
   );
 }
